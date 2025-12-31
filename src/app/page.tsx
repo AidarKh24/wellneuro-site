@@ -1,16 +1,19 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-fog">
-      <div className="container py-16">
-        <div className="rounded-2xl border border-line bg-white p-10 shadow-soft">
-          <div className="text-xs font-semibold tracking-widest text-accent uppercase">
+    <main className="min-h-screen bg-slate-50 p-6">
+      <div className="mx-auto max-w-3xl">
+        <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm">
+          <p className="text-sm font-semibold tracking-widest text-slate-500">
             wellneuro.ru
-          </div>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight">
+          </p>
+
+          <h1 className="mt-4 text-3xl font-bold leading-tight text-slate-900">
             Велнейро — центр здоровья и благополучия
           </h1>
-          <p className="mt-4 max-w-2xl text-steel">
-            Технический запуск. Далее добавим дизайн-систему, главную, /start и /franchise.
+
+          <p className="mt-4 text-base leading-relaxed text-slate-700">
+            Технический запуск. Далее добавим разделы: услуги, врачи, расписание,
+            отзывы, и старт /franchise.
           </p>
         </div>
       </div>
