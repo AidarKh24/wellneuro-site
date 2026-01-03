@@ -13,21 +13,11 @@ export default function Page() {
           </a>
 
           <nav className="hidden items-center gap-6 text-sm text-neutral-700 md:flex">
-            <a className="hover:text-neutral-900" href="#system">
-              Система
-            </a>
-            <a className="hover:text-neutral-900" href="#partners">
-              Партнёрство
-            </a>
-            <a className="hover:text-neutral-900" href="#steps">
-              Этапы
-            </a>
-            <a className="hover:text-neutral-900" href="#economics">
-              Экономика
-            </a>
-            <a className="hover:text-neutral-900" href="#faq">
-              FAQ
-            </a>
+            <a className="hover:text-neutral-900" href="#system">Система</a>
+            <a className="hover:text-neutral-900" href="#partners">Партнёрство</a>
+            <a className="hover:text-neutral-900" href="#steps">Этапы</a>
+            <a className="hover:text-neutral-900" href="#economics">Экономика</a>
+            <a className="hover:text-neutral-900" href="#faq">FAQ</a>
           </nav>
 
           <a
@@ -41,7 +31,6 @@ export default function Page() {
 
       {/* HERO */}
       <section id="top" className="relative overflow-hidden">
-        {/* Background accents */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-sky-200/40 blur-3xl" />
           <div className="absolute -bottom-48 right-[-120px] h-[520px] w-[520px] rounded-full bg-emerald-200/40 blur-3xl" />
@@ -49,7 +38,6 @@ export default function Page() {
         </div>
 
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
-          {/* Left: Text */}
           <div className="flex flex-col justify-center">
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs text-neutral-700">
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -101,15 +89,12 @@ export default function Page() {
             <p className="mt-4 text-xs text-neutral-500">PDF • без обязательств • по запросу</p>
           </div>
 
-          {/* Right: Visual card */}
           <div className="flex items-center justify-center">
             <div className="w-full rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur">
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <div className="text-sm font-semibold text-neutral-900">Экосистема Велнейро</div>
-                  <div className="mt-1 text-xs text-neutral-600">
-                    Методы • обучение • сопровождение • разработки
-                  </div>
+                  <div className="mt-1 text-xs text-neutral-600">Методы • обучение • сопровождение • разработки</div>
                 </div>
                 <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-sky-500 to-emerald-500" />
               </div>
@@ -374,12 +359,10 @@ export default function Page() {
                 },
               ].map((item, i, arr) => (
                 <li key={i} className="relative pl-10">
-                  {/* line */}
                   {i !== arr.length - 1 && (
                     <div className="absolute left-[18px] top-7 h-[calc(100%+8px)] w-px bg-neutral-200" />
                   )}
 
-                  {/* dot */}
                   <div className={`absolute left-3 top-1.5 h-3 w-3 rounded-full ${item.dot}`} />
 
                   <div className="rounded-2xl border border-neutral-200 bg-white p-4">
@@ -403,16 +386,117 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ECONOMICS (placeholder) */}
-      <section
-        id="economics"
-        className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24"
-      >
-        <h2 className="text-2xl font-semibold tracking-tight">Экономика</h2>
-        <p className="mt-3 max-w-2xl text-neutral-700">
-          Здесь будет блок про финансовую логику и уникальные конкурентные преимущества (квинтэссенция методов +
-          разработки/оборудование).
-        </p>
+      {/* ECONOMICS (filled) */}
+      <section id="economics" className="mx-auto max-w-6xl px-4 py-20 border-t border-neutral-200/70 scroll-mt-24">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs text-neutral-700">
+              <span className="h-2 w-2 rounded-full bg-emerald-600" />
+              Экономика и логика модели
+            </div>
+
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight md:text-3xl">
+              Понятная модель, честная логика, без «обещаний»
+            </h2>
+
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Велнейро — это не “упаковка ради упаковки”. Экономика опирается на три устойчивых источника ценности:
+              <span className="font-medium text-neutral-900"> системная методология</span>,{" "}
+              <span className="font-medium text-neutral-900">обучение и сопровождение</span>,{" "}
+              <span className="font-medium text-neutral-900">эксклюзивные разработки</span>.
+            </p>
+
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Мы избегаем громких цифр на лендинге: финансовая модель зависит от города, формата, загрузки и команды.
+              Поэтому мы показываем <span className="font-medium text-neutral-900">логику расчёта</span> и даём пример
+              финмодели по запросу.
+            </p>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#cta"
+                className="rounded-2xl bg-neutral-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-neutral-800"
+              >
+                Запросить пример финмодели
+              </a>
+              <a
+                href="#faq"
+                className="rounded-2xl border border-neutral-300 bg-white/70 px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-white"
+              >
+                Вопросы и ответы
+              </a>
+            </div>
+
+            <div className="mt-7 rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm">
+              <div className="text-sm font-semibold text-neutral-900">Что делает модель сильнее</div>
+              <p className="mt-2 text-sm text-neutral-700">
+                Эксклюзивные разработки и инструменты внутри системы — это то, что сложнее всего скопировать конкурентам.
+                А постоянное обновление методов помогает оставаться всегда актуальными.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">1) Практика</div>
+                <div className="mt-1 font-semibold text-neutral-900">Приёмы и программы</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  Доход формируется из регулярной практики и программ сопровождения.
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">2) Обучение</div>
+                <div className="mt-1 font-semibold text-neutral-900">Рост компетенций</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  Обучение повышает качество и уверенность, а значит — доверие клиентов и стабильность загрузки.
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">3) Эксклюзив</div>
+                <div className="mt-1 font-semibold text-neutral-900">Разработки и инструменты</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  Технологическая дифференциация: методы и решения внутри экосистемы Велнейро.
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">4) Устойчивость</div>
+                <div className="mt-1 font-semibold text-neutral-900">Система развития</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  Обновления, сопровождение, методическая база — чтобы партнёр рос вместе с системой.
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4">
+              <div className="text-xs text-neutral-500">Как читать финмодель</div>
+              <ul className="mt-2 space-y-2 text-sm text-neutral-700">
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-sky-600" />
+                  Формат: личная практика / центр / команда
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-emerald-600" />
+                  Загрузка: количество клиентов и повторяемость
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-neutral-900" />
+                  Структура: расходы, операционные процессы, роль партнёра
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4">
+              <div className="text-xs text-neutral-500">Важно</div>
+              <div className="mt-1 text-sm text-neutral-700">
+                Мы обсуждаем экономику честно: цифры зависят от исходных условий. Поэтому финмодель — в презентации по запросу.
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ (placeholder) */}
