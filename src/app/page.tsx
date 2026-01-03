@@ -1,46 +1,104 @@
+"use client";
+
+import { useMemo, useState } from "react";
+
 export default function Page() {
-  const faqs = [
-    {
-      q: "Кому подходит партнёрство Велнейро?",
-      a: "Тем, кто хочет работать в сфере оздоровления и развивать практику на основе ясной системы. Подходит специалистам, предпринимателям и руководителям центров, а также тем, кто готов учиться и работать по подходам Велнейро.",
-    },
-    {
-      q: "Нужно ли быть врачом или иметь медицинский диплом?",
-      a: "Нет. В экосистеме Велнейро важны этика, обучаемость, ответственность и готовность следовать подходам/философии оздоровления. Формат вашей деятельности подбирается так, чтобы оставаться корректным в формулировках и в рамках требований вашего региона.",
-    },
-    {
-      q: "Это про медицину или про оздоровление?",
-      a: "В публичных коммуникациях и в клиентском позиционировании Велнейро — про оздоровление и благополучие. Мы аккуратно используем формулировки и строим процессы так, чтобы не уходить в декларацию медицинских услуг там, где это требует лицензирования.",
-    },
-    {
-      q: "Что именно я получаю как партнёр?",
-      a: "Систему методов и приёмов, обучение, методические материалы, сопровождение, обновления и доступ к эксклюзивным разработкам и инструментам внутри экосистемы Велнейро. Это создаёт конкурентное преимущество и помогает быстрее выйти на уверенную практику.",
-    },
-    {
-      q: "Насколько это “живая” система? Она обновляется?",
-      a: "Да. Велнейро строится как система постоянного развития: подходы, методики и инструменты совершенствуются, появляются новые решения и обновления. Партнёр растёт вместе с экосистемой и остаётся всегда актуален.",
-    },
-    {
-      q: "Сколько времени занимает запуск?",
-      a: "Зависит от выбранного формата (личная практика / центр / команда), стартовых условий и вовлечённости. Мы выстраиваем путь по шагам: знакомство → формат → обучение → подготовка → запуск → сопровождение.",
-    },
-    {
-      q: "Есть ли эксклюзив и чем вы отличаетесь от “обычных” школ/курсов?",
-      a: "Ключевое отличие — квинтэссенция методов, практическая системность и эксклюзивные разработки/инструменты внутри Велнейро. Это не набор разрозненных техник, а цельная логика работы, поддержанная обучением, процессами и развитием.",
-    },
-    {
-      q: "Как устроена поддержка после запуска?",
-      a: "Партнёр не остаётся один: сопровождение, обратная связь, уточнение нюансов, обновления материалов и развитие компетенций. Это важная часть модели — качество и устойчивость практики растут со временем.",
-    },
-    {
-      q: "Будут ли на сайте обещания результатов или “гарантии”?",
-      a: "Нет. Мы строим доверие на взрослой коммуникации: показываем систему, логику, формат обучения и сопровождения. Без агрессивных триггеров, без громких обещаний и без “миллионов за месяц”.",
-    },
-    {
-      q: "Как обсуждается экономика и финансовая модель?",
-      a: "Честно и по входным данным: город, формат, загрузка, команда, расходы. На лендинге — логика и принципы. Пример финмодели — в презентации по запросу, чтобы не давать цифры “в вакууме”.",
-    },
-  ];
+  const faqs = useMemo(
+    () => [
+      {
+        q: "Кому подходит партнёрство Велнейро?",
+        a: "Тем, кто хочет работать в сфере оздоровления и развивать практику на основе ясной системы. Подходит специалистам, предпринимателям и руководителям центров, а также тем, кто готов учиться и работать по подходам Велнейро.",
+      },
+      {
+        q: "Нужно ли быть врачом или иметь медицинский диплом?",
+        a: "Нет. В экосистеме Велнейро важны этика, обучаемость, ответственность и готовность следовать подходам/философии оздоровления. Формат вашей деятельности подбирается так, чтобы оставаться корректным в формулировках и в рамках требований вашего региона.",
+      },
+      {
+        q: "Это про медицину или про оздоровление?",
+        a: "В публичных коммуникациях и в клиентском позиционировании Велнейро — про оздоровление и благополучие. Мы аккуратно используем формулировки и строим процессы так, чтобы не уходить в декларацию медицинских услуг там, где это требует лицензирования.",
+      },
+      {
+        q: "Что именно я получаю как партнёр?",
+        a: "Систему методов и приёмов, обучение, методические материалы, сопровождение, обновления и доступ к эксклюзивным разработкам и инструментам внутри экосистемы Велнейро. Это создаёт конкурентное преимущество и помогает быстрее выйти на уверенную практику.",
+      },
+      {
+        q: "Насколько это “живая” система? Она обновляется?",
+        a: "Да. Велнейро строится как система постоянного развития: подходы, методики и инструменты совершенствуются, появляются новые решения и обновления. Партнёр растёт вместе с экосистемой и остаётся всегда актуален.",
+      },
+      {
+        q: "Сколько времени занимает запуск?",
+        a: "Зависит от выбранного формата (личная практика / центр / команда), стартовых условий и вовлечённости. Мы выстраиваем путь по шагам: знакомство → формат → обучение → подготовка → запуск → сопровождение.",
+      },
+      {
+        q: "Есть ли эксклюзив и чем вы отличаетесь от “обычных” школ/курсов?",
+        a: "Ключевое отличие — квинтэссенция методов, практическая системность и эксклюзивные разработки/инструменты внутри Велнейро. Это не набор разрозненных техник, а цельная логика работы, поддержанная обучением, процессами и развитием.",
+      },
+      {
+        q: "Как устроена поддержка после запуска?",
+        a: "Партнёр не остаётся один: сопровождение, обратная связь, уточнение нюансов, обновления материалов и развитие компетенций. Это важная часть модели — качество и устойчивость практики растут со временем.",
+      },
+      {
+        q: "Будут ли на сайте обещания результатов или “гарантии”?",
+        a: "Нет. Мы строим доверие на взрослой коммуникации: показываем систему, логику, формат обучения и сопровождения. Без агрессивных триггеров, без громких обещаний и без “миллионов за месяц”.",
+      },
+      {
+        q: "Как обсуждается экономика и финансовая модель?",
+        a: "Честно и по входным данным: город, формат, загрузка, команда, расходы. На лендинге — логика и принципы. Пример финмодели — в презентации по запросу, чтобы не давать цифры “в вакууме”.",
+      },
+    ],
+    []
+  );
+
+  const [submitted, setSubmitted] = useState(false);
+  const [touched, setTouched] = useState<{ [k: string]: boolean }>({});
+  const [form, setForm] = useState({
+    name: "",
+    contact: "",
+    city: "",
+    format: "Личная практика",
+    background: "Специалист",
+    message: "",
+    consent: true,
+  });
+
+  const required = {
+    name: form.name.trim().length > 1,
+    contact: form.contact.trim().length > 3,
+    city: form.city.trim().length > 1,
+  };
+
+  const canSubmit = required.name && required.contact && required.city && form.consent;
+
+  const leadText = useMemo(() => {
+    const lines = [
+      "Заявка на презентацию Велнейро",
+      "—",
+      `Имя: ${form.name || "—"}`,
+      `Контакт (TG/WhatsApp/Email): ${form.contact || "—"}`,
+      `Город: ${form.city || "—"}`,
+      `Формат интереса: ${form.format}`,
+      `Кто я: ${form.background}`,
+      `Комментарий: ${form.message || "—"}`,
+      "—",
+      `Источник: wellneuro.ru (лендинг)`,
+    ];
+    return lines.join("\n");
+  }, [form]);
+
+  function setField<K extends keyof typeof form>(key: K, value: (typeof form)[K]) {
+    setForm((prev) => ({ ...prev, [key]: value }));
+  }
+
+  function markTouched(key: string) {
+    setTouched((prev) => ({ ...prev, [key]: true }));
+  }
+
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setTouched({ name: true, contact: true, city: true, consent: true });
+    if (!canSubmit) return;
+    setSubmitted(true);
+  }
 
   return (
     <main className="min-h-screen bg-white text-neutral-900">
@@ -77,7 +135,7 @@ export default function Page() {
             href="#cta"
             className="rounded-xl bg-neutral-900 px-4 py-2 text-sm font-semibold text-white hover:bg-neutral-800"
           >
-            Получить презентацию
+            Оставить заявку
           </a>
         </div>
       </header>
@@ -129,7 +187,7 @@ export default function Page() {
                 href="#cta"
                 className="rounded-2xl bg-neutral-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-neutral-800"
               >
-                Получить презентацию и пример финмодели
+                Оставить заявку на презентацию
               </a>
               <a
                 href="#system"
@@ -139,7 +197,7 @@ export default function Page() {
               </a>
             </div>
 
-            <p className="mt-4 text-xs text-neutral-500">PDF • без обязательств • по запросу</p>
+            <p className="mt-4 text-xs text-neutral-500">Без обязательств • по делу • взрослый тон</p>
           </div>
 
           <div className="flex items-center justify-center">
@@ -176,7 +234,7 @@ export default function Page() {
               <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4">
                 <div className="text-xs text-neutral-500">Следующий шаг</div>
                 <div className="mt-1 text-sm text-neutral-700">
-                  Получите презентацию партнёрства и пример финансовой логики — и обсудим формат участия.
+                  Оставьте заявку — и получите презентацию партнёрства и пример финансовой логики.
                 </div>
               </div>
             </div>
@@ -184,7 +242,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SYSTEM (filled) */}
+      {/* SYSTEM */}
       <section id="system" className="mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
           <div>
@@ -207,8 +265,7 @@ export default function Page() {
             <p className="mt-4 text-neutral-700 leading-relaxed">
               При этом система постоянно развивается: появляются новые подходы, методики и инструменты. Партнёр работает{" "}
               <span className="font-medium text-neutral-900">в системе постоянного развития</span>, остаётся{" "}
-              <span className="font-medium text-neutral-900">всегда актуален</span> для рынка и клиентов и растёт вместе
-              с экосистемой Велнейро.
+              <span className="font-medium text-neutral-900">всегда актуален</span> и растёт вместе с экосистемой Велнейро.
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -222,7 +279,7 @@ export default function Page() {
                 href="#cta"
                 className="rounded-2xl border border-neutral-300 bg-white/70 px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-white"
               >
-                Получить презентацию
+                Оставить заявку
               </a>
             </div>
           </div>
@@ -278,7 +335,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PARTNERS (filled) */}
+      {/* PARTNERS */}
       <section id="partners" className="mx-auto max-w-6xl px-4 py-20 scroll-mt-24 border-t border-neutral-200/70">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs text-neutral-700">
@@ -331,7 +388,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* STEPS (filled) */}
+      {/* STEPS */}
       <section id="steps" className="mx-auto max-w-6xl px-4 py-20 border-t border-neutral-200/70 scroll-mt-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
           <div>
@@ -371,7 +428,7 @@ export default function Page() {
                 href="#cta"
                 className="rounded-2xl border border-neutral-300 bg-white/70 px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-white"
               >
-                Получить презентацию
+                Оставить заявку
               </a>
             </div>
           </div>
@@ -444,7 +501,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ECONOMICS (filled) */}
+      {/* ECONOMICS */}
       <section id="economics" className="mx-auto max-w-6xl px-4 py-20 border-t border-neutral-200/70 scroll-mt-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
           <div>
@@ -557,7 +614,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FAQ (filled) */}
+      {/* FAQ */}
       <section id="faq" className="mx-auto max-w-6xl px-4 py-20 border-t border-neutral-200/70 scroll-mt-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
           <div>
@@ -588,7 +645,7 @@ export default function Page() {
                 href="#cta"
                 className="rounded-2xl bg-neutral-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-neutral-800"
               >
-                Получить презентацию
+                Оставить заявку
               </a>
               <a
                 href="#partners"
@@ -602,10 +659,7 @@ export default function Page() {
           <div className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur">
             <div className="space-y-3">
               {faqs.map((item, idx) => (
-                <details
-                  key={idx}
-                  className="group rounded-2xl border border-neutral-200 bg-white p-4"
-                >
+                <details key={idx} className="group rounded-2xl border border-neutral-200 bg-white p-4">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                     <span className="text-sm font-semibold text-neutral-900">{item.q}</span>
                     <span className="text-neutral-500 transition group-open:rotate-45">+</span>
@@ -625,27 +679,199 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="cta" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
-        <div className="rounded-3xl border border-neutral-200 bg-neutral-900 p-8 text-white">
-          <h2 className="text-2xl font-semibold tracking-tight">Получить презентацию Велнейро</h2>
-          <p className="mt-3 max-w-2xl text-white/80">
-            Напиши мне в удобный канал, и я пришлю PDF-презентацию партнёрства и пример финансовой логики.
-            (На следующем шаге мы сделаем здесь красивую форму-заявку.)
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#top"
-              className="rounded-2xl bg-white px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-neutral-100"
-            >
-              Вернуться наверх
-            </a>
-            <a
-              href="#system"
-              className="rounded-2xl border border-white/20 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-white/15"
-            >
-              Посмотреть систему
-            </a>
+      {/* CTA with lead form */}
+      <section id="cta" className="mx-auto max-w-6xl px-4 py-20 border-t border-neutral-200/70 scroll-mt-24">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-start">
+          <div className="rounded-3xl border border-neutral-200 bg-neutral-900 p-8 text-white">
+            <h2 className="text-2xl font-semibold tracking-tight">Заявка на презентацию Велнейро</h2>
+            <p className="mt-3 max-w-xl text-white/80">
+              Оставьте контакты — я пришлю PDF-презентацию партнёрства и пример финансовой логики.
+              <br />
+              <span className="text-white/70">
+                (Пока форма не отправляет данные автоматически — после заполнения вы получите готовый текст заявки для копирования.)
+              </span>
+            </p>
+
+            <div className="mt-6 rounded-2xl border border-white/15 bg-white/10 p-4">
+              <div className="text-xs text-white/70">Взрослый принцип</div>
+              <div className="mt-1 text-sm text-white/90">
+                Без обещаний “гарантий”. Сначала — система, формат и условия. Затем — решение.
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
+            {!submitted ? (
+              <form onSubmit={onSubmit} className="space-y-4">
+                <div>
+                  <label className="text-sm font-semibold text-neutral-900">Имя *</label>
+                  <input
+                    value={form.name}
+                    onChange={(e) => setField("name", e.target.value)}
+                    onBlur={() => markTouched("name")}
+                    placeholder="Как к вам обращаться"
+                    className={[
+                      "mt-2 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition",
+                      touched.name && !required.name ? "border-red-400" : "border-neutral-200",
+                      "focus:border-neutral-400",
+                    ].join(" ")}
+                  />
+                  {touched.name && !required.name && (
+                    <div className="mt-1 text-xs text-red-600">Укажите имя (минимум 2 символа).</div>
+                  )}
+                </div>
+
+                <div>
+                  <label className="text-sm font-semibold text-neutral-900">Контакт (TG/WhatsApp/Email) *</label>
+                  <input
+                    value={form.contact}
+                    onChange={(e) => setField("contact", e.target.value)}
+                    onBlur={() => markTouched("contact")}
+                    placeholder="@telegram или +7... или email"
+                    className={[
+                      "mt-2 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition",
+                      touched.contact && !required.contact ? "border-red-400" : "border-neutral-200",
+                      "focus:border-neutral-400",
+                    ].join(" ")}
+                  />
+                  {touched.contact && !required.contact && (
+                    <div className="mt-1 text-xs text-red-600">Укажите контакт для связи.</div>
+                  )}
+                </div>
+
+                <div>
+                  <label className="text-sm font-semibold text-neutral-900">Город *</label>
+                  <input
+                    value={form.city}
+                    onChange={(e) => setField("city", e.target.value)}
+                    onBlur={() => markTouched("city")}
+                    placeholder="Ваш город"
+                    className={[
+                      "mt-2 w-full rounded-2xl border px-4 py-3 text-sm outline-none transition",
+                      touched.city && !required.city ? "border-red-400" : "border-neutral-200",
+                      "focus:border-neutral-400",
+                    ].join(" ")}
+                  />
+                  {touched.city && !required.city && (
+                    <div className="mt-1 text-xs text-red-600">Укажите город.</div>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="text-sm font-semibold text-neutral-900">Формат интереса</label>
+                    <select
+                      value={form.format}
+                      onChange={(e) => setField("format", e.target.value)}
+                      className="mt-2 w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none focus:border-neutral-400"
+                    >
+                      <option>Личная практика</option>
+                      <option>Центр с командой</option>
+                      <option>Партнёрский формат</option>
+                      <option>Инвестор / управляющий</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-semibold text-neutral-900">Кто вы</label>
+                    <select
+                      value={form.background}
+                      onChange={(e) => setField("background", e.target.value)}
+                      className="mt-2 w-full rounded-2xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none focus:border-neutral-400"
+                    >
+                      <option>Специалист</option>
+                      <option>Предприниматель</option>
+                      <option>Руководитель центра</option>
+                      <option>Ищу новое дело</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-sm font-semibold text-neutral-900">Комментарий (необязательно)</label>
+                  <textarea
+                    value={form.message}
+                    onChange={(e) => setField("message", e.target.value)}
+                    placeholder="Что важно учесть? Какие цели и ожидания?"
+                    className="mt-2 w-full rounded-2xl border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-neutral-400"
+                    rows={4}
+                  />
+                </div>
+
+                <label className="flex items-start gap-3 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+                  <input
+                    type="checkbox"
+                    checked={form.consent}
+                    onChange={(e) => setField("consent", e.target.checked)}
+                    onBlur={() => markTouched("consent")}
+                    className="mt-1"
+                  />
+                  <span className="text-xs text-neutral-700">
+                    Я согласен(на) на обработку контактных данных для связи по запросу презентации.
+                  </span>
+                </label>
+
+                <button
+                  type="submit"
+                  className={[
+                    "w-full rounded-2xl px-6 py-3 text-sm font-semibold text-white transition",
+                    canSubmit ? "bg-neutral-900 hover:bg-neutral-800" : "bg-neutral-400 cursor-not-allowed",
+                  ].join(" ")}
+                >
+                  Сформировать заявку
+                </button>
+
+                <p className="text-xs text-neutral-500">
+                  На следующем шаге подключим автоматическую отправку (Telegram/Email) — отдельно и безопасно.
+                </p>
+              </form>
+            ) : (
+              <div>
+                <div className="rounded-3xl border border-neutral-200 bg-white p-5">
+                  <div className="text-sm font-semibold text-neutral-900">Заявка сформирована ✅</div>
+                  <p className="mt-2 text-sm text-neutral-700">
+                    Скопируйте текст ниже и отправьте мне в удобный канал (Telegram/WhatsApp/Email).
+                    <br />
+                    На следующем шаге мы подключим авто-отправку.
+                  </p>
+
+                  <div className="mt-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+                    <pre className="whitespace-pre-wrap text-xs text-neutral-800">{leadText}</pre>
+                  </div>
+
+                  <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        try {
+                          await navigator.clipboard.writeText(leadText);
+                        } catch {}
+                      }}
+                      className="rounded-2xl bg-neutral-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-neutral-800"
+                    >
+                      Скопировать текст
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSubmitted(false);
+                        setTouched({});
+                      }}
+                      className="rounded-2xl border border-neutral-300 bg-white px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-neutral-50"
+                    >
+                      Исправить данные
+                    </button>
+                  </div>
+                </div>
+
+                <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-4">
+                  <div className="text-xs text-neutral-500">Подсказка</div>
+                  <div className="mt-1 text-sm text-neutral-700">
+                    Если хотите, напишите в комментарии: желаемый формат (личная практика/центр), опыт, бюджет/ресурс и сроки.
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
