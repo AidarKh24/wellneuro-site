@@ -13,11 +13,21 @@ export default function Page() {
           </a>
 
           <nav className="hidden items-center gap-6 text-sm text-neutral-700 md:flex">
-            <a className="hover:text-neutral-900" href="#system">Система</a>
-            <a className="hover:text-neutral-900" href="#partners">Партнёрство</a>
-            <a className="hover:text-neutral-900" href="#steps">Этапы</a>
-            <a className="hover:text-neutral-900" href="#economics">Экономика</a>
-            <a className="hover:text-neutral-900" href="#faq">FAQ</a>
+            <a className="hover:text-neutral-900" href="#system">
+              Система
+            </a>
+            <a className="hover:text-neutral-900" href="#partners">
+              Партнёрство
+            </a>
+            <a className="hover:text-neutral-900" href="#steps">
+              Этапы
+            </a>
+            <a className="hover:text-neutral-900" href="#economics">
+              Экономика
+            </a>
+            <a className="hover:text-neutral-900" href="#faq">
+              FAQ
+            </a>
           </nav>
 
           <a
@@ -54,9 +64,8 @@ export default function Page() {
 
             <p className="mt-5 text-base leading-relaxed text-neutral-700 md:text-lg">
               <span className="font-semibold text-neutral-900">Велнейро</span> — франшиза центра осознанного
-              оздоровления, где многолетняя практика, исследования и авторские разработки
-              упакованы в <span className="font-medium text-neutral-900">понятную систему методов</span>, обучение и
-              сопровождение.
+              оздоровления, где многолетняя практика, исследования и авторские разработки упакованы в{" "}
+              <span className="font-medium text-neutral-900">понятную систему методов</span>, обучение и сопровождение.
             </p>
 
             <ul className="mt-6 space-y-3 text-sm text-neutral-700 md:text-base">
@@ -89,9 +98,7 @@ export default function Page() {
               </a>
             </div>
 
-            <p className="mt-4 text-xs text-neutral-500">
-              PDF • без обязательств • по запросу
-            </p>
+            <p className="mt-4 text-xs text-neutral-500">PDF • без обязательств • по запросу</p>
           </div>
 
           {/* Right: Visual card */}
@@ -100,9 +107,7 @@ export default function Page() {
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <div className="text-sm font-semibold text-neutral-900">Экосистема Велнейро</div>
-                  <div className="mt-1 text-xs text-neutral-600">
-                    Методы • обучение • сопровождение • разработки
-                  </div>
+                  <div className="mt-1 text-xs text-neutral-600">Методы • обучение • сопровождение • разработки</div>
                 </div>
                 <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-sky-500 to-emerald-500" />
               </div>
@@ -137,48 +142,136 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Placeholder sections (we will fill these next, step-by-step) */}
-      <section id="system" className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-2xl font-semibold tracking-tight">Система Велнейро</h2>
-        <p className="mt-3 max-w-2xl text-neutral-700">
-          Следующим шагом мы сюда аккуратно вставим отшлифованный блок про систему, методы, эксклюзивные разработки и масштабирование.
-        </p>
+      {/* SYSTEM (filled) */}
+      <section id="system" className="mx-auto max-w-6xl px-4 py-16 scroll-mt-24">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
+          <div>
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs text-neutral-700">
+              <span className="h-2 w-2 rounded-full bg-sky-600" />
+              Система • методы • эксклюзивные разработки
+            </div>
+
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight md:text-3xl">
+              Сложное становится понятным — и начинает работать
+            </h2>
+
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              Велнейро — это квинтэссенция практики и исследований, собранная в ясную систему:{" "}
+              <span className="font-medium text-neutral-900">как быстро и точно находить причину состояния</span> и
+              применять <span className="font-medium text-neutral-900">проверенные методы и приёмы</span>, чтобы
+              получать устойчивый результат без многолетнего хаотичного поиска.
+            </p>
+
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              При этом система постоянно развивается: появляются новые подходы, методики и инструменты. Партнёр работает{" "}
+              <span className="font-medium text-neutral-900">в системе постоянного развития</span>, остаётся{" "}
+              <span className="font-medium text-neutral-900">всегда актуален</span> для рынка и клиентов и растёт вместе
+              с экосистемой Велнейро.
+            </p>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#partners"
+                className="rounded-2xl bg-neutral-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-neutral-800"
+              >
+                Что получает партнёр
+              </a>
+              <a
+                href="#cta"
+                className="rounded-2xl border border-neutral-300 bg-white/70 px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-white"
+              >
+                Получить презентацию
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">01 — Ясная логика</div>
+                <div className="mt-1 font-semibold text-neutral-900">Причина → решение → результат</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  Понимаете, что делать и почему — без “угадываний” и бесконечных проб.
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">02 — Методы и приёмы</div>
+                <div className="mt-1 font-semibold text-neutral-900">Отобрано и проверено</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  В системе оставлено то, что реально работает. Лишнее — отброшено.
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">03 — Алгоритмы</div>
+                <div className="mt-1 font-semibold text-neutral-900">Понятный ход приёма</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  Структура работы помогает сохранять ясность и уверенность на практике.
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                <div className="text-xs text-neutral-500">04 — Эксклюзивность</div>
+                <div className="mt-1 font-semibold text-neutral-900">Разработки и инструменты</div>
+                <div className="mt-2 text-sm text-neutral-700">
+                  Авторские решения и технологические разработки внутри системы создают конкурентное преимущество.
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4">
+              <div className="flex items-start gap-3">
+                <div className="mt-1 h-9 w-9 rounded-2xl bg-gradient-to-br from-sky-500 to-emerald-500" />
+                <div>
+                  <div className="text-sm font-semibold text-neutral-900">Что важно</div>
+                  <p className="mt-1 text-sm text-neutral-700">
+                    Велнейро сочетает глубину и практичность: система даёт ясные механизмы работы — и при этом остаётся
+                    живой, обновляемой и исследовательской.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="partners" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70">
+      {/* Placeholder sections (we will fill these next, step-by-step) */}
+      <section id="partners" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
         <h2 className="text-2xl font-semibold tracking-tight">Партнёрство</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
           Здесь будет блок «Что получает партнёр Велнейро» — конкретно, спокойно и без “пакетов”.
         </p>
       </section>
 
-      <section id="steps" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70">
+      <section id="steps" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
         <h2 className="text-2xl font-semibold tracking-tight">Этапы запуска</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
           Здесь вставим пошаговый путь партнёра: от знакомства до запуска и развития.
         </p>
       </section>
 
-      <section id="economics" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70">
+      <section id="economics" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
         <h2 className="text-2xl font-semibold tracking-tight">Экономика</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
-          Здесь будет блок про финансовую логику и уникальные конкурентные преимущества (квинтэссенция методов + разработки/оборудование).
+          Здесь будет блок про финансовую логику и уникальные конкурентные преимущества (квинтэссенция методов +
+          разработки/оборудование).
         </p>
       </section>
 
-      <section id="faq" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70">
+      <section id="faq" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
         <h2 className="text-2xl font-semibold tracking-tight">FAQ</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
           Здесь соберём ответы на вопросы (без триггеров, спокойно и взрослым тоном).
         </p>
       </section>
 
-      <section id="cta" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70">
+      <section id="cta" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
         <div className="rounded-3xl border border-neutral-200 bg-neutral-900 p-8 text-white">
           <h2 className="text-2xl font-semibold tracking-tight">Получить презентацию Велнейро</h2>
           <p className="mt-3 max-w-2xl text-white/80">
-            Напиши мне в удобный канал, и я пришлю PDF-презентацию партнёрства и пример финансовой логики.
-            (На следующем шаге мы сделаем здесь красивую форму-заявку.)
+            Напиши мне в удобный канал, и я пришлю PDF-презентацию партнёрства и пример финансовой логики. (На следующем
+            шаге мы сделаем здесь красивую форму-заявку.)
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
