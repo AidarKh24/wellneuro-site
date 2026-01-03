@@ -13,11 +13,21 @@ export default function Page() {
           </a>
 
           <nav className="hidden items-center gap-6 text-sm text-neutral-700 md:flex">
-            <a className="hover:text-neutral-900" href="#system">Система</a>
-            <a className="hover:text-neutral-900" href="#partners">Партнёрство</a>
-            <a className="hover:text-neutral-900" href="#steps">Этапы</a>
-            <a className="hover:text-neutral-900" href="#economics">Экономика</a>
-            <a className="hover:text-neutral-900" href="#faq">FAQ</a>
+            <a className="hover:text-neutral-900" href="#system">
+              Система
+            </a>
+            <a className="hover:text-neutral-900" href="#partners">
+              Партнёрство
+            </a>
+            <a className="hover:text-neutral-900" href="#steps">
+              Этапы
+            </a>
+            <a className="hover:text-neutral-900" href="#economics">
+              Экономика
+            </a>
+            <a className="hover:text-neutral-900" href="#faq">
+              FAQ
+            </a>
           </nav>
 
           <a
@@ -54,9 +64,8 @@ export default function Page() {
 
             <p className="mt-5 text-base leading-relaxed text-neutral-700 md:text-lg">
               <span className="font-semibold text-neutral-900">Велнейро</span> — франшиза центра осознанного
-              оздоровления, где многолетняя практика, исследования и авторские разработки
-              упакованы в <span className="font-medium text-neutral-900">понятную систему методов</span>, обучение и
-              сопровождение.
+              оздоровления, где многолетняя практика, исследования и авторские разработки упакованы в{" "}
+              <span className="font-medium text-neutral-900">понятную систему методов</span>, обучение и сопровождение.
             </p>
 
             <ul className="mt-6 space-y-3 text-sm text-neutral-700 md:text-base">
@@ -149,8 +158,8 @@ export default function Page() {
             </h2>
 
             <p className="mt-4 text-neutral-700 leading-relaxed">
-              Велнейро — это квинтэссенция практики и исследований, собранная в ясную систему:
-              <span className="font-medium text-neutral-900"> как быстро и точно находить причину состояния</span> и
+              Велнейро — это квинтэссенция практики и исследований, собранная в ясную систему:{" "}
+              <span className="font-medium text-neutral-900">как быстро и точно находить причину состояния</span> и
               применять <span className="font-medium text-neutral-900">проверенные методы и приёмы</span>, чтобы получать
               устойчивый результат без многолетнего хаотичного поиска.
             </p>
@@ -242,8 +251,8 @@ export default function Page() {
           </h2>
 
           <p className="mt-4 text-neutral-700 leading-relaxed">
-            Партнёрство с Велнейро — это доступ к целостной системе, в которой уже собраны,
-            структурированы и проверены методы, инструменты и подходы.
+            Партнёрство с Велнейро — это доступ к целостной системе, в которой уже собраны, структурированы и проверены
+            методы, инструменты и подходы.
           </p>
         </div>
 
@@ -282,21 +291,131 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Placeholder sections (we will fill these next) */}
-      <section id="steps" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
-        <h2 className="text-2xl font-semibold tracking-tight">Этапы запуска</h2>
-        <p className="mt-3 max-w-2xl text-neutral-700">
-          Здесь вставим пошаговый путь партнёра: от знакомства до запуска и развития.
-        </p>
+      {/* STEPS (filled) */}
+      <section id="steps" className="mx-auto max-w-6xl px-4 py-20 border-t border-neutral-200/70 scroll-mt-24">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/70 px-3 py-1 text-xs text-neutral-700">
+              <span className="h-2 w-2 rounded-full bg-sky-600" />
+              Запуск партнёра
+            </div>
+
+            <h2 className="mt-4 text-2xl font-semibold tracking-tight md:text-3xl">
+              Путь партнёра: ясно, спокойно, по шагам
+            </h2>
+
+            <p className="mt-4 text-neutral-700 leading-relaxed">
+              В Велнейро не “заходят вслепую”. С самого начала процесс выстроен так, чтобы у вас были{" "}
+              <span className="font-medium text-neutral-900">понимание, ясность и уверенность</span> на каждом этапе.
+            </p>
+
+            <div className="mt-7 rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm">
+              <div className="text-sm font-semibold text-neutral-900">Опора партнёра</div>
+              <p className="mt-2 text-sm text-neutral-700">
+                Вы идёте по системе, в которой уже собраны методы, обучение и инструменты. Это даёт{" "}
+                <span className="font-medium text-neutral-900">уверенность и поддержку на каждом этапе работы и развития</span>.
+              </p>
+            </div>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#economics"
+                className="rounded-2xl bg-neutral-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-neutral-800"
+              >
+                Посмотреть экономику
+              </a>
+              <a
+                href="#cta"
+                className="rounded-2xl border border-neutral-300 bg-white/70 px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-white"
+              >
+                Получить презентацию
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm backdrop-blur">
+            <ol className="relative space-y-6">
+              {[
+                {
+                  step: "1",
+                  title: "Знакомство и диалог",
+                  text: "Вы получаете презентацию, знакомитесь с философией и возможностями. Обсуждаем цели, формат участия и ожидания.",
+                  dot: "bg-emerald-500",
+                },
+                {
+                  step: "2",
+                  title: "Выбор формата и модели",
+                  text: "Определяем оптимальную модель: личная практика, центр с командой или партнёрский формат — с учётом города и ресурсов.",
+                  dot: "bg-sky-600",
+                },
+                {
+                  step: "3",
+                  title: "Обучение и освоение системы",
+                  text: "Обучение выстроено так, чтобы сформировать понимание и уверенность в применении методов на практике.",
+                  dot: "bg-neutral-900",
+                },
+                {
+                  step: "4",
+                  title: "Подготовка к запуску",
+                  text: "Параллельно формируем структуру работы, методические материалы и процессы приёма. Помогаем избежать типичных ошибок.",
+                  dot: "bg-sky-600",
+                },
+                {
+                  step: "5",
+                  title: "Старт практической работы",
+                  text: "Первые приёмы, обратная связь, уточнение деталей. Вы развиваете практику в контакте с системой.",
+                  dot: "bg-emerald-500",
+                },
+                {
+                  step: "6",
+                  title: "Сопровождение и развитие",
+                  text: "Поддержка, ответы, развитие навыков и обновления методов. Вы работаете в системе постоянного развития и всегда актуальны.",
+                  dot: "bg-neutral-900",
+                },
+              ].map((item, i, arr) => (
+                <li key={i} className="relative pl-10">
+                  {/* line */}
+                  {i !== arr.length - 1 && (
+                    <div className="absolute left-[18px] top-7 h-[calc(100%+8px)] w-px bg-neutral-200" />
+                  )}
+
+                  {/* dot */}
+                  <div className={`absolute left-3 top-1.5 h-3 w-3 rounded-full ${item.dot}`} />
+
+                  <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <div className="text-sm font-semibold text-neutral-900">{item.title}</div>
+                      <div className="text-xs text-neutral-500">Этап {item.step}</div>
+                    </div>
+                    <p className="mt-2 text-sm text-neutral-700">{item.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4">
+              <div className="text-xs text-neutral-500">Итог</div>
+              <div className="mt-1 text-sm text-neutral-700">
+                Процесс запуска построен так, чтобы вы сохраняли ясность и уверенность — и могли расти вместе с системой.
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="economics" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
+      {/* ECONOMICS (placeholder) */}
+      <section
+        id="economics"
+        className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24"
+      >
         <h2 className="text-2xl font-semibold tracking-tight">Экономика</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
-          Здесь будет блок про финансовую логику и уникальные конкурентные преимущества (квинтэссенция методов + разработки/оборудование).
+          Здесь будет блок про финансовую логику и уникальные конкурентные преимущества (квинтэссенция методов +
+          разработки/оборудование).
         </p>
       </section>
 
+      {/* FAQ (placeholder) */}
       <section id="faq" className="mx-auto max-w-6xl px-4 py-16 border-t border-neutral-200/70 scroll-mt-24">
         <h2 className="text-2xl font-semibold tracking-tight">FAQ</h2>
         <p className="mt-3 max-w-2xl text-neutral-700">
