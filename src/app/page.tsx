@@ -149,7 +149,7 @@ export default function Page() {
   <img
     src="\logo wellneuro.jpg"
     alt="Велнейро"
-    className="h-9 w-auto"
+    className="h-10 w-auto"
   />
   <div className="leading-tight">
     <div className="text-sm font-semibold tracking-tight text-[#1A2B3C]">
