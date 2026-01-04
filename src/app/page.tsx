@@ -360,7 +360,7 @@ export default function Page() {
               ))}
             </div>
 
-            <div className="mt-6 rounded-2xl border border-[#C7D0DB] bg-[#F3F6FA] p-4">
+            <div className="mt-6 rounded-2xl border border-[#C7D0DB] bg-[#EEF3F8]/70 backdrop-blur p-4">
               <div className="flex items-start gap-3">
                 <div className="mt-1 h-9 w-9 rounded-2xl bg-gradient-to-br from-[#3FB4E6] to-[#00A99D]" />
                 <div>
@@ -450,7 +450,7 @@ export default function Page() {
               <span className="font-medium text-[#1A2B3C]">понимание, ясность и уверенность</span> на каждом этапе.
             </p>
 
-            <div className="mt-7 rounded-3xl border border-[#C7D0DB] bg-[#F3F6FA] p-6 shadow-sm">
+            <div className="mt-7 rounded-3xl border border-[#C7D0DB] bg-[#EEF3F8]/70 backdrop-blur p-6 shadow-sm">
               <div className="text-sm font-semibold text-[#1A2B3C]">Опора партнёра</div>
               <p className="mt-2 text-sm text-[#6B7785]">
                 Вы идёте по системе, где уже собраны методы, обучение и инструменты. Это даёт{" "}
@@ -640,7 +640,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="mt-6 rounded-2xl border border-[#C7D0DB] bg-[#F3F6FA] p-4">
+            <div className="mt-6 rounded-2xl border border-[#C7D0DB] bg-[#EEF3F8]/70 backdrop-blur p-4">
               <div className="text-xs text-[#6B7785]">Важно</div>
               <div className="mt-1 text-sm text-[#6B7785]">
                 Финмодель обсуждаем по входным данным — поэтому пример даём в презентации по запросу.
@@ -713,7 +713,7 @@ export default function Page() {
               <span className="text-[#6B7785]">Если что-то пойдёт не так — вы всё равно сможете скопировать текст заявки.</span>
             </p>
 
-            <div className="mt-6 rounded-2xl border border-[#C7D0DB] bg-[#F3F6FA] p-4">
+            <div className="mt-6 rounded-2xl border border-[#C7D0DB] bg-[#EEF3F8]/70 backdrop-blur p-4">
               <div className="text-xs text-[#6B7785]">Взрослый принцип</div>
               <div className="mt-1 text-sm text-[#6B7785]">
                 Без громких обещаний. Сначала — система, формат и условия. Затем — решение.
