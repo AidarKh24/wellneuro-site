@@ -50,6 +50,9 @@ export default function Page() {
   );
 
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
+
   const [touched, setTouched] = useState<{ [k: string]: boolean }>({});
   const [form, setForm] = useState({
     name: "",
@@ -80,7 +83,7 @@ export default function Page() {
       `Кто я: ${form.background}`,
       `Комментарий: ${form.message || "—"}`,
       "—",
-      `Источник: wellneuro.ru (лендинг)`,
+      `Источник: wellneuro.ru (landing)`,
     ];
     return lines.join("\n");
   }, [form]);
@@ -93,11 +96,49 @@ export default function Page() {
     setTouched((prev) => ({ ...prev, [key]: true }));
   }
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setTouched({ name: true, contact: true, city: true, consent: true });
+    setSendError(null);
+
     if (!canSubmit) return;
-    setSubmitted(true);
+
+    setSending(true);
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          contact: form.contact,
+          city: form.city,
+          format: form.format,
+          background: form.background,
+          message: form.message,
+          source: "wellneuro.ru (landing)",
+        }),
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok || !data?.ok) {
+        const reason =
+          data?.error ||
+          data?.telegram?.reason ||
+          data?.email?.reason ||
+          `HTTP ${res.status}`;
+        setSendError(`Не удалось отправить автоматически. Можно скопировать текст заявки ниже. (${reason})`);
+        setSubmitted(true);
+        return;
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      setSendError(`Ошибка сети. Можно скопировать текст заявки ниже. (${err?.message || "network"})`);
+      setSubmitted(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -632,14 +673,6 @@ export default function Page() {
               ожиданий.
             </p>
 
-            <div className="mt-7 rounded-3xl border border-neutral-200 bg-white/70 p-6 shadow-sm">
-              <div className="text-sm font-semibold text-neutral-900">Если у вас другой вопрос</div>
-              <p className="mt-2 text-sm text-neutral-700">
-                Напишите — и мы разберём вашу ситуацию: формат, город, цели, стартовые условия. Это часть правильного
-                “знакомства и диалога”.
-              </p>
-            </div>
-
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#cta"
@@ -668,13 +701,6 @@ export default function Page() {
                 </details>
               ))}
             </div>
-
-            <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4">
-              <div className="text-xs text-neutral-500">Принцип коммуникации</div>
-              <div className="mt-1 text-sm text-neutral-700">
-                Мы строим доверие без шаблонных “продающих” штампов: ясность, уважение, система и поддержка.
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -685,10 +711,10 @@ export default function Page() {
           <div className="rounded-3xl border border-neutral-200 bg-neutral-900 p-8 text-white">
             <h2 className="text-2xl font-semibold tracking-tight">Заявка на презентацию Велнейро</h2>
             <p className="mt-3 max-w-xl text-white/80">
-              Оставьте контакты — я пришлю PDF-презентацию партнёрства и пример финансовой логики.
+              Оставьте контакты — и заявка уйдёт мне автоматически: <b>в Telegram</b> и <b>на Email</b>.
               <br />
               <span className="text-white/70">
-                (Пока форма не отправляет данные автоматически — после заполнения вы получите готовый текст заявки для копирования.)
+                Если что-то пойдёт не так — вы всё равно сможете скопировать текст заявки.
               </span>
             </p>
 
@@ -716,9 +742,6 @@ export default function Page() {
                       "focus:border-neutral-400",
                     ].join(" ")}
                   />
-                  {touched.name && !required.name && (
-                    <div className="mt-1 text-xs text-red-600">Укажите имя (минимум 2 символа).</div>
-                  )}
                 </div>
 
                 <div>
@@ -734,9 +757,6 @@ export default function Page() {
                       "focus:border-neutral-400",
                     ].join(" ")}
                   />
-                  {touched.contact && !required.contact && (
-                    <div className="mt-1 text-xs text-red-600">Укажите контакт для связи.</div>
-                  )}
                 </div>
 
                 <div>
@@ -752,9 +772,6 @@ export default function Page() {
                       "focus:border-neutral-400",
                     ].join(" ")}
                   />
-                  {touched.city && !required.city && (
-                    <div className="mt-1 text-xs text-red-600">Укажите город.</div>
-                  )}
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -813,26 +830,29 @@ export default function Page() {
 
                 <button
                   type="submit"
+                  disabled={!canSubmit || sending}
                   className={[
                     "w-full rounded-2xl px-6 py-3 text-sm font-semibold text-white transition",
-                    canSubmit ? "bg-neutral-900 hover:bg-neutral-800" : "bg-neutral-400 cursor-not-allowed",
+                    canSubmit && !sending ? "bg-neutral-900 hover:bg-neutral-800" : "bg-neutral-400 cursor-not-allowed",
                   ].join(" ")}
                 >
-                  Сформировать заявку
+                  {sending ? "Отправляю..." : "Отправить заявку"}
                 </button>
 
                 <p className="text-xs text-neutral-500">
-                  На следующем шаге подключим автоматическую отправку (Telegram/Email) — отдельно и безопасно.
+                  Данные отправляются на сервер, затем — в Telegram и на Email.
                 </p>
               </form>
             ) : (
               <div>
                 <div className="rounded-3xl border border-neutral-200 bg-white p-5">
-                  <div className="text-sm font-semibold text-neutral-900">Заявка сформирована ✅</div>
+                  <div className="text-sm font-semibold text-neutral-900">
+                    {sendError ? "Заявка сохранена, но авто-отправка не прошла ⚠️" : "Заявка отправлена ✅"}
+                  </div>
                   <p className="mt-2 text-sm text-neutral-700">
-                    Скопируйте текст ниже и отправьте мне в удобный канал (Telegram/WhatsApp/Email).
-                    <br />
-                    На следующем шаге мы подключим авто-отправку.
+                    {sendError
+                      ? sendError
+                      : "Я получил заявку в Telegram и на Email. Если хотите — добавьте ещё пару деталей в сообщении."}
                   </p>
 
                   <div className="mt-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
@@ -856,10 +876,11 @@ export default function Page() {
                       onClick={() => {
                         setSubmitted(false);
                         setTouched({});
+                        setSendError(null);
                       }}
                       className="rounded-2xl border border-neutral-300 bg-white px-6 py-3 text-center text-sm font-semibold text-neutral-900 hover:bg-neutral-50"
                     >
-                      Исправить данные
+                      Отправить ещё раз
                     </button>
                   </div>
                 </div>
@@ -867,7 +888,7 @@ export default function Page() {
                 <div className="mt-4 rounded-2xl border border-neutral-200 bg-white p-4">
                   <div className="text-xs text-neutral-500">Подсказка</div>
                   <div className="mt-1 text-sm text-neutral-700">
-                    Если хотите, напишите в комментарии: желаемый формат (личная практика/центр), опыт, бюджет/ресурс и сроки.
+                    Если хотите, напишите: желаемый формат (личная практика/центр), опыт, ресурс и сроки.
                   </div>
                 </div>
               </div>
