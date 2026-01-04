@@ -145,14 +145,22 @@ export default function Page() {
       {/* Top Navigation */}
       <header className="sticky top-0 z-50 border-b border-[#C7D0DB]/70 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          {/* ЛОГО (пока плейсхолдер): заменим на твоё изображение в следующем шаге */}
           <a href="#top" className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-2xl bg-gradient-to-br from-[#3FB4E6] to-[#00A99D]" />
-            <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-tight text-[#1A2B3C]">Велнейро</div>
-              <div className="text-xs text-[#6B7785]">wellneuro.ru</div>
-            </div>
-          </a>
+  <img
+    src="\logo wellneuro.jpg"
+    alt="Велнейро"
+    className="h-9 w-auto"
+  />
+  <div className="leading-tight">
+    <div className="text-sm font-semibold tracking-tight text-[#1A2B3C]">
+      Велнейро
+    </div>
+    <div className="text-xs text-[#6B7785]">
+      Центр здоровья и благополучия
+    </div>
+  </div>
+</a>
+
 
           <nav className="hidden items-center gap-6 text-sm text-[#6B7785] md:flex">
             <a className="hover:text-[#1A2B3C]" href="#system">
@@ -893,7 +901,7 @@ export default function Page() {
 
       <footer className="border-t border-[#C7D0DB]/70 py-10 bg-white">
         <div className="mx-auto max-w-6xl px-4 text-sm text-[#6B7785]">
-          © {new Date().getFullYear()} Велнейро • wellneuro.ru
+          © {new Date().getFullYear()} Велнейро
         </div>
       </footer>
     </main>
