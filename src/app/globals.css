@@ -27,3 +27,58 @@ body{
 ::selection{
   background: rgba(var(--a2), 0.25);
 }
+:root {
+  --bg: #ffffff;
+  --text: #1a2b3c;
+  --muted: #6b7785;
+
+  /* мягкий акцент вместо “ядовитого” */
+  --accent: #0ea5a4;       /* спокойная бирюза */
+  --accent2: #2ea1ff;      /* прохладный голубой */
+  --lav: #eef2ff;          /* очень мягкий “лиловый”, почти белый */
+}
+
+/* базовые шрифты */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
+/* “премиальный” фон секций */
+.bg-aurora {
+  background:
+    radial-gradient(900px 420px at 20% 10%, rgba(14,165,164,0.12), transparent 60%),
+    radial-gradient(780px 360px at 80% 5%, rgba(46,161,255,0.12), transparent 55%),
+    radial-gradient(900px 420px at 50% 90%, rgba(120,119,198,0.10), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+
+/* стеклянные карточки */
+.glass {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(199,208,219,0.55);
+  box-shadow: 0 12px 40px rgba(13,59,102,0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* “перелив” кнопки (очень мягко) */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%) skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transition: transform 700ms ease;
+}
+.btn-sheen:hover::after {
+  transform: translateX(120%) skewX(-20deg);
+}
