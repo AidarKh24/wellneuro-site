@@ -1,30 +1,31 @@
 import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Inter, Cormorant_Garamond } from "next/font/google";
 
 const inter = Inter({
-  subsets: ["cyrillic", "latin"],
+  subsets: ["latin", "cyrillic"],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["cyrillic", "latin"],
+const playfair = Playfair_Display({
+  subsets: ["latin", "cyrillic"],
   variable: "--font-serif",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Велнейро — Центр здоровья",
-  description: "Франшиза центра осознанного оздоровления.",
+  description:
+    "Велнейро — экосистема интегративного оздоровления. Франшиза и партнёрство.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru">
-      <body className={`${inter.variable} ${cormorant.variable} antialiased`}>
+    <html lang="ru" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="min-h-screen bg-aurora text-[var(--wn-text)] antialiased">
         {children}
       </body>
     </html>
