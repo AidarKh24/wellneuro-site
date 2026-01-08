@@ -49,7 +49,7 @@ export default function Hero() {
             </div>
 
             <div className="mt-6 text-sm text-[rgba(107,119,133,0.9)]">
-              Без обязательств • по делу • взрослый тон
+              Деликатно • конфиденциально • уважение к выбору
             </div>
           </div>
 
