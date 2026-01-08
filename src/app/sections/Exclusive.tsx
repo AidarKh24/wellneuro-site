@@ -15,7 +15,7 @@ export default function Exclusive() {
           {/* LEFT: copy */}
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-[#1A2B3C]">
-              Разработки и инструменты,
+              Эксклюзивное оборудование и разработки,
               <span className="text-[#0D3B66]"> усиливающие практику</span>
             </h2>
 
