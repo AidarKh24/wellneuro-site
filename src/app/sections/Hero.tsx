@@ -12,13 +12,13 @@ export default function Hero() {
           {/* ЛЕВАЯ КОЛОНКА */}
           <div className="glass p-7 sm:p-9">
             <h1 className="font-serif text-[42px] leading-[1.02] tracking-[-0.02em] text-[#1A2B3C] sm:text-[56px]">
-              Профессия со смыслом.
+              Профессия со смыслом
               <br />
               Бизнес с{" "}
               <span className="bg-[linear-gradient(90deg,#0D3B66,#00A99D,#3FB4E6)] bg-clip-text text-transparent">
                 будущим
               </span>
-              .
+            
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#6B7785]">
