@@ -1,11 +1,11 @@
 import Hero from "./sections/Hero";
-import System from "./sections/System";
+import Exclusive from "./sections/Exclusive";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <System />
+      <Exclusive />
     </main>
   );
 }
